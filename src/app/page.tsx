@@ -30,23 +30,24 @@ export default function HomePage() {
                 Your AI Research Assistant for Accelerated Discovery
               </p>
 
-              <div className="flex gap-4 pt-4">
-                <Link href="/research">
+              <div className="flex flex-wrap gap-4 pt-4">
+                <Link href="/chat">
                   <Button
                     size="lg"
                     className="bg-[#3B82F6] hover:bg-[#2563EB] text-white shadow-button hover:shadow-button-hover transform hover:-translate-y-0.5 transition-all"
                   >
-                    Start Researching
-                    <ArrowRight className="ml-2 w-5 h-5" />
+                    Chat with AI
+                    <MessageSquare className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
-                <Link href="/library">
+                <Link href="/research">
                   <Button
                     size="lg"
                     variant="outline"
                     className="border-white/30 text-white hover:bg-white/10"
                   >
-                    View Library
+                    Start Researching
+                    <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
               </div>
@@ -111,9 +112,9 @@ export default function HomePage() {
               <div className="flex justify-center">
                 <IconWrapper icon={MessageSquare} />
               </div>
-              <h4 className="font-semibold text-[#1F2937]">Intelligent Summarization</h4>
+              <h4 className="font-semibold text-[#1F2937]">Conversational AI Interface</h4>
               <p className="text-[#6B7280]">
-                AI-powered analysis organizes findings into clear, actionable insights with citations
+                Chat naturally with our AI agent to get instant answers, insights, and research assistance
               </p>
             </div>
 
@@ -134,18 +135,29 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="py-20 bg-[#F9FAFB]">
         <div className="max-w-3xl mx-auto text-center container-padding space-y-6">
-          <h2>Start Your Free Trial</h2>
+          <h2>Start Chatting with AI</h2>
           <p className="text-lg text-[#6B7280]">
-            Transform hours of research into minutes of AI-powered investigation
+            Get instant answers and research assistance through our conversational AI interface
           </p>
-          <Link href="/research">
-            <Button
-              size="lg"
-              className="bg-[#3B82F6] hover:bg-[#2563EB] text-white shadow-button hover:shadow-button-hover"
-            >
-              Start Researching Now
-            </Button>
-          </Link>
+          <div className="flex gap-4 justify-center">
+            <Link href="/chat">
+              <Button
+                size="lg"
+                className="bg-[#3B82F6] hover:bg-[#2563EB] text-white shadow-button hover:shadow-button-hover"
+              >
+                Chat Now
+              </Button>
+            </Link>
+            <Link href="/research">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-[#E5E7EB] hover:bg-[#F9FAFB]"
+              >
+                Start Researching
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
     </div>

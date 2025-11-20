@@ -1,37 +1,153 @@
-export const dynamic = 'force-dynamic'
+export const dynamic = 'force-dynamic';
 
-export default function Index() {
+import { NetworkBackground } from '@/components/ui/network-background';
+import { IconWrapper } from '@/components/ui/icon-wrapper';
+import { FileSearch, MessageSquare, Settings, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+
+export default function HomePage() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="text-center max-w-2xl px-4">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your App</h1>
-        <p className="text-xl mb-6 text-gray-600">
-          This template is configured to be absolutely lenient - builds never fail on validation errors.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-left">
-          <div className="p-4 bg-green-50 rounded-lg border border-green-200">
-            <h3 className="font-semibold text-green-800 mb-2">✅ Always Builds</h3>
-            <ul className="text-green-700 space-y-1">
-              <li>• TypeScript errors ignored</li>
-              <li>• ESLint warnings ignored</li>
-              <li>• Global error boundaries</li>
-              <li>• Asset type safety</li>
-            </ul>
-          </div>
-          <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
-            <h3 className="font-semibold text-blue-800 mb-2">🚀 Production Ready</h3>
-            <ul className="text-blue-700 space-y-1">
-              <li>• Next.js 15.5.2 App Router</li>
-              <li>• Vercel optimized</li>
-              <li>• SSR/SEO friendly</li>
-              <li>• Browser API protection</li>
-            </ul>
+    <div className="min-h-screen">
+      {/* Hero Section with Network Background */}
+      <NetworkBackground className="min-h-[600px] flex items-center">
+        <div className="max-w-7xl mx-auto container-padding py-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Hero Content */}
+            <div className="space-y-6 text-white">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-8 h-8 bg-[#3B82F6] rounded-lg flex items-center justify-center">
+                  <FileSearch className="w-5 h-5 text-white" strokeWidth={2.5} />
+                </div>
+                <span className="text-lg font-semibold tracking-wide">AI-RESEARCH</span>
+              </div>
+
+              <h1 className="text-white">
+                Unlock Knowledge,<br />Instantly
+              </h1>
+
+              <p className="text-xl text-gray-300 leading-relaxed">
+                Your AI Research Assistant for Accelerated Discovery
+              </p>
+
+              <div className="flex gap-4 pt-4">
+                <Link href="/research">
+                  <Button
+                    size="lg"
+                    className="bg-[#3B82F6] hover:bg-[#2563EB] text-white shadow-button hover:shadow-button-hover transform hover:-translate-y-0.5 transition-all"
+                  >
+                    Start Researching
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+                <Link href="/library">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-white/30 text-white hover:bg-white/10"
+                  >
+                    View Library
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column - Dashboard Preview Card */}
+            <div className="hidden lg:block">
+              <div className="bg-white rounded-[16px] shadow-card p-6 space-y-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-semibold text-[#1F2937]">Research Summary</h3>
+                  <span className="text-sm text-[#6B7280]">Just now</span>
+                </div>
+
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#3B82F6] to-[#8B5CF6] flex items-center justify-center text-white text-sm font-semibold">
+                      AI
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-sm text-[#1F2937] leading-relaxed">
+                        Based on analysis of 23 sources...
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="bg-[#F9FAFB] rounded-lg p-4 space-y-2">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-[#6B7280]">Sources analyzed</span>
+                      <span className="font-semibold text-[#1F2937]">23</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-[#6B7280]">Quality score</span>
+                      <span className="font-semibold text-[#10B981]">95%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <p className="mt-6 text-gray-500">
-          Start building your amazing project here! This template will never fail builds due to validation errors.
-        </p>
-      </div>
+      </NetworkBackground>
+
+      {/* Features Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto container-padding">
+          <h2 className="text-center mb-12">Features</h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Feature 1 */}
+            <div className="text-center space-y-4">
+              <div className="flex justify-center">
+                <IconWrapper icon={FileSearch} />
+              </div>
+              <h4 className="font-semibold text-[#1F2937]">Automated Data Collection</h4>
+              <p className="text-[#6B7280]">
+                Automatically gather information from academic papers, news articles, and credible sources
+              </p>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="text-center space-y-4">
+              <div className="flex justify-center">
+                <IconWrapper icon={MessageSquare} />
+              </div>
+              <h4 className="font-semibold text-[#1F2937]">Intelligent Summarization</h4>
+              <p className="text-[#6B7280]">
+                AI-powered analysis organizes findings into clear, actionable insights with citations
+              </p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="text-center space-y-4">
+              <div className="flex justify-center">
+                <IconWrapper icon={Settings} />
+              </div>
+              <h4 className="font-semibold text-[#1F2937]">Custom Configurations</h4>
+              <p className="text-[#6B7280]">
+                Customize research depth, source preferences, and citation formats to match your needs
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-[#F9FAFB]">
+        <div className="max-w-3xl mx-auto text-center container-padding space-y-6">
+          <h2>Start Your Free Trial</h2>
+          <p className="text-lg text-[#6B7280]">
+            Transform hours of research into minutes of AI-powered investigation
+          </p>
+          <Link href="/research">
+            <Button
+              size="lg"
+              className="bg-[#3B82F6] hover:bg-[#2563EB] text-white shadow-button hover:shadow-button-hover"
+            >
+              Start Researching Now
+            </Button>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
